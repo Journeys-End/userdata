@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "userdata",
+  "version": "${version}",
+
+  "name": "userdata",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "All-Rights-Reserved",
+  "icon": "assets/userdata/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.journeysend.userdata.Userdata"]
+  },
+
+
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
