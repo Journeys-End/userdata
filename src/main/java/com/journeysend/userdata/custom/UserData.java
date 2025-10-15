@@ -5,30 +5,34 @@ import net.minecraft.nbt.NbtCompound;
 
 public class UserData extends DataState {
   public String charPronouns;
-  public String preferred;
-  public String age;
+  public String userPronouns;
+  public String preferredName;
+  public String charAge;
 
   public UserData() {
     this.charPronouns = "";
-    this.preferred = "";
-    this.age = "";
+    this.userPronouns = "";
+    this.preferredName = "";
+    this.charAge = "";
   }
 
-  public UserData(String charPronouns, String preferred, String age) {
+  public UserData(String charPronouns, String userPronouns, String preferred, String age) {
     this.charPronouns = charPronouns;
-    this.preferred = preferred;
-    this.age = age;
+    this.userPronouns = userPronouns;
+    this.preferredName = preferred;
+    this.charAge = age;
   }
 
   @Override
   public NbtCompound writeNbt(NbtCompound nbt) {
     nbt.putString("charPronouns", charPronouns);
-    nbt.putString("preferred", preferred);
-    nbt.putString("age", age);
+    nbt.putString("userPronouns", userPronouns);
+    nbt.putString("preferredName", preferredName);
+    nbt.putString("charAge", charAge);
     return nbt;
   }
 
   public static UserData fromNbt(NbtCompound nbt) {
-    return new UserData(nbt.getString("charPronouns"), nbt.getString("preferred"), nbt.getString("age"));
+    return new UserData(nbt.getString("charPronouns"), nbt.getString("userPronouns"), nbt.getString("preferredName"), nbt.getString("charAge"));
   }
 }
